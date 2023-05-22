@@ -42,21 +42,21 @@ extension InfoAPI: BaseAPI {
         switch self {
         case .getInfo:
             var lastWeekInfoListData = [
-                InfoListData(category: "Music", name: "Test1", count: "1번", favorite: "ON", backgroundColor: "BLACK")
+                InfoData(category: "Music", name: "Test1", count: "1번", favorite: "ON", backgroundColor: "BLACK")
             ]
             
             var todayInfoListData = [
-                InfoListData(category: "Movie", name: "Test2", count: "2번", favorite: "OFF", backgroundColor: "PURPLE")
+                InfoData(category: "Movie", name: "Test2", count: "2번", favorite: "OFF", backgroundColor: "PURPLE")
             ]
             var thisWeekInfoListData = [
-                InfoListData(category: "Music", name: "Test3", count: "3번", favorite: "ON", backgroundColor: "BLACK")
+                InfoData(category: "Music", name: "Test3", count: "3번", favorite: "ON", backgroundColor: "BLACK")
             ]
             
             var nextWeekInfoListData = [
-                InfoListData(category: "Movie", name: "Test4", count: "4번", favorite: "OFF", backgroundColor: "PURPLE")
+                InfoData(category: "Movie", name: "Test4", count: "4번", favorite: "OFF", backgroundColor: "PURPLE")
             ]
             
-            let entity = InfoListEntity(lastWeek: lastWeekInfoListData, today: todayInfoListData, thisWeek: thisWeekInfoListData, nextWeek: nextWeekInfoListData)
+            let entity = InfoEntity(lastWeek: lastWeekInfoListData, today: todayInfoListData, thisWeek: thisWeekInfoListData, nextWeek: nextWeekInfoListData)
             
             if let data = try? JSONEncoder().encode(entity) {
                 return data

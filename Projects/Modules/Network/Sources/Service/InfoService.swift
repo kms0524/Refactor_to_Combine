@@ -14,11 +14,11 @@ import Moya
 public typealias DefaultInfoService = BaseService<InfoAPI>
 
 public protocol InfoService {
-    func getInfos() -> AnyPublisher<InfoListEntity?, Error>
+    func getInfos() -> AnyPublisher<InfoEntity?, Error>
 }
 
 extension DefaultInfoService: InfoService {
-    public func getInfos() -> AnyPublisher<InfoListEntity?, Error> {
+    public func getInfos() -> AnyPublisher<InfoEntity?, Error> {
         return test.requestObjectInCombine(.getInfo)
     }
 }
