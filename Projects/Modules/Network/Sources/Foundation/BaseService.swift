@@ -41,6 +41,8 @@ open class BaseService<Target: TargetType> {
         
         return testingProvider
     }()
+    
+    public init() {} 
 }
 
 public extension BaseService {

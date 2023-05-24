@@ -9,9 +9,17 @@
 import Foundation
 
 public struct InfoEntity: Codable {
-    public let lastWeek, today, thisWeek, nextWeek: [InfoData]
+    public let infoList: InfoList
     
-    public init(lastWeek: [InfoData], today: [InfoData], thisWeek: [InfoData], nextWeek: [InfoData]) {
+    public init(infoList: InfoList) {
+        self.infoList = infoList
+    }
+}
+
+public struct InfoList: Codable {
+    public let lastWeek, today, thisWeek, nextWeek: [InfoListData]
+    
+    public init(lastWeek: [InfoListData], today: [InfoListData], thisWeek: [InfoListData], nextWeek: [InfoListData]) {
         self.lastWeek = lastWeek
         self.today = today
         self.thisWeek = thisWeek
@@ -20,7 +28,7 @@ public struct InfoEntity: Codable {
     }
 }
 
-public struct InfoData: Codable {
+public struct InfoListData: Codable {
     public let category, name, count, favorite, backgroundColor: String
     
     public init(category: String, name: String, count: String, favorite: String, backgroundColor: String) {

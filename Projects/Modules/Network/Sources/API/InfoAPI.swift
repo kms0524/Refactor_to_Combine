@@ -42,21 +42,21 @@ extension InfoAPI: BaseAPI {
         switch self {
         case .getInfo:
             var lastWeekInfoListData = [
-                InfoData(category: "Music", name: "Test1", count: "1번", favorite: "ON", backgroundColor: "BLACK")
+                InfoListData(category: "Music", name: "Test1", count: "1번", favorite: "ON", backgroundColor: "BLACK"), InfoListData(category: "Music", name: "Test1", count: "1번", favorite: "ON", backgroundColor: "BLACK")
             ]
             
             var todayInfoListData = [
-                InfoData(category: "Movie", name: "Test2", count: "2번", favorite: "OFF", backgroundColor: "PURPLE")
+                InfoListData(category: "Movie", name: "Test2", count: "2번", favorite: "OFF", backgroundColor: "PURPLE")
             ]
             var thisWeekInfoListData = [
-                InfoData(category: "Music", name: "Test3", count: "3번", favorite: "ON", backgroundColor: "BLACK")
+                InfoListData(category: "Music", name: "Test3", count: "3번", favorite: "ON", backgroundColor: "BLACK"), InfoListData(category: "Music", name: "Test3", count: "3번", favorite: "ON", backgroundColor: "BLACK")
             ]
             
             var nextWeekInfoListData = [
-                InfoData(category: "Movie", name: "Test4", count: "4번", favorite: "OFF", backgroundColor: "PURPLE")
+                InfoListData(category: "Movie", name: "Test4", count: "4번", favorite: "OFF", backgroundColor: "PURPLE")
             ]
             
-            let entity = InfoEntity(lastWeek: lastWeekInfoListData, today: todayInfoListData, thisWeek: thisWeekInfoListData, nextWeek: nextWeekInfoListData)
+            let entity = InfoEntity(infoList: InfoList(lastWeek: lastWeekInfoListData, today: todayInfoListData, thisWeek: thisWeekInfoListData, nextWeek: nextWeekInfoListData))
             
             if let data = try? JSONEncoder().encode(entity) {
                 return data
